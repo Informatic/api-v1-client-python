@@ -153,7 +153,7 @@ class Wallet:
         self.parse_error(json_response)
         return Address(0,
                         json_response['address'],
-                        json_response['label'],
+                        json_response.get('label', None),
                         0)
                         
     def archive_address(self, address):
